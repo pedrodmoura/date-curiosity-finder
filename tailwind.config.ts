@@ -32,6 +32,10 @@ export default {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
 				},
+				// Cores temáticas
+				events: 'hsl(var(--events))',
+				deaths: 'hsl(var(--deaths))',
+				births: 'hsl(var(--births))',
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
