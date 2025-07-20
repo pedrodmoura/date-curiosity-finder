@@ -32,14 +32,18 @@ const Results = () => {
       setIsLoading(true);
       
       try {
-        const response = await fetch(`https://history.muffinlabs.com/date/${month}/${day}`);
+        const response = await fetch(`https://en.wikipedia.org/api/rest_v1/feed/onthisday/all/${month}/${day}`);
         
         if (!response.ok) {
           throw new Error('Falha na busca dos dados');
         }
         
         const result = await response.json();
-        setData(result.data);
+        setData({
+          events: result.events || [],
+          deaths: result.deaths || [],
+          births: result.births || []
+        });
       } catch (error) {
         console.error('Erro ao buscar dados:', error);
         toast({
